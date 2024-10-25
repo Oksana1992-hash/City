@@ -8,7 +8,7 @@ def get_coordinates(city, key):
         if results: # Если результат поиска не пустой:
             lat = round(results[0]['geometry']['lat'], 2) # создаем переменные, в которые вкладываем полученные с сайта значения и округляем до двух знаков после запятой
             lon = round(results[0]['geometry']['lng'], 2)
-            return results[0]['geometry']['lat'], results[0]['geometry']['lng']
+            return f'Широта: {lat}, Долгота: {lon}'
         else:
             return 'Город не найден'
     except Exception as e:
@@ -16,7 +16,7 @@ def get_coordinates(city, key):
 
 
 key = '7fc16b0ccb324c30944cbf2198b062e9'
-city = 'Реутов'
+city = 'Эквадор'
 coordinates = get_coordinates(city, key)
 print(f'Координаты города {city}: {coordinates}')
 
